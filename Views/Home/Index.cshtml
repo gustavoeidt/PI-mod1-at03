@@ -1,8 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model List<Edital>
+@model List<Noticia>
 
-<div class="text-center">
+    <section class="noticias" style="margin: 10px; padding: 10px; border: dotted 2px black; width: 600px; float: left;">
+        @foreach (Noticia item in Model)
+        {
+            <article>
+                <h2 class="amazon" style="margin: 0;">@item.titulo</h2>
+                <p style="border-bottom: 2px dotted black; padding-bottom: 10px; margin: 0;"><small>@item.data</small></p>
+                <p>@item.texto</p>
+            </article>
+        <hr />
+        }
+        
+    </section>
 
-</div>
+    <aside style=" float: left; margin: 10px; padding: 10px;" class="dustStormBG EerieBlack">
+        <a href="/Home/Contato"><img src="img/anuncie.jpg" alt="Anuncie Aqui"></a>
+    </aside>

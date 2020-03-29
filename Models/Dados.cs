@@ -19,6 +19,7 @@ namespace at03.Models
         static Dados()
         { 
             editais = new List<Edital>();
+            noticias = new List<Noticia>();
         }
 
         public static void incluirEdital(Edital edital)

@@ -7,38 +7,29 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Infocon</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">@Html.ActionLink("Home","Index","Home")</li> 
-                        <li class="nav-item">@Html.ActionLink("Listagem de Editais","Editais","Home")</li> 
-                        <li class="nav-item">@Html.ActionLink("Contato","Contato","Home")</li> 
-                        <li class="nav-item">@Html.ActionLink("Cadastra Edital","CadastraEdital","Home")</li> 
-                        <li class="nav-item">@Html.ActionLink("Cadastra Notícia","CadastraNoticia","Home")</li> 
-                    </ul>
-                </div>
-            </div>
+    <body class="EerieBlackBG" style="padding: 0; margin: 0;">
+        <header style="background-image: url('img/header.jpg'); padding: 10px 20px;">
+            <h1>Infocon</h1>
+        </header>
+        
+        <nav class="independenceBG">
+            <ul style="margin: 0; padding: 10px 20px; list-style: none;">
+                <li>@Html.ActionLink("Home","Index","Home")</li> 
+                <li>@Html.ActionLink("Listagem de Editais","Editais","Home")</li> 
+                <li>@Html.ActionLink("Contato","Contato","Home")</li> 
+                <li>@Html.ActionLink("Cadastra Edital","CadastraEdital","Home")</li> 
+                <li>@Html.ActionLink("Cadastra Notícia","CadastraNoticia","Home")</li> 
+                
+            </ul>
         </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; @DateTime.Now.Year  Infocon | Fone: +55 (47) 9999-9999
+        <div style="margin: 20px;">
+            @RenderBody()
         </div>
-    </footer>
+
+        <footer class="amazonBG" style="padding: 40px 20px; clear: both;">
+            &copy; @DateTime.Now.Year  Infocon | Fone: +55 (47) 9999-9999
+        </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

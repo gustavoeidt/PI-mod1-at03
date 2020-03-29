@@ -70,4 +70,26 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-textarea {resize: both; width: 100%;}
+textarea {
+  resize: both; width: 100%;
+}
+
+* {color: #d0ceba; font-family: Arial, Helvetica, sans-serif;}
+.independence {color: #4b3f72;}
+.amazon {color: #417b5a;}
+.pastelGray {color: #d0ceba;}
+.dustStorm {color: #e9d2c0;}
+.EerieBlack {color: #1b1b1e;}
+.independenceBG {background-color: #4b3f72;}
+.amazonBG {background-color: #417b5a;}
+.pastelGrayBG {background-color: #d0ceba;}
+.dustStormBG {background-color: #e9d2c0;}
+.EerieBlackBG {background-color: #1b1b1e;}
+
+nav li {display: inline; margin-right: 20px;}
+nav li a{cursor: pointer; font-weight: bold; text-decoration: none; color: white;}
+nav li a:hover {color: #e9d2c0; text-decoration:underline !important;}
+
+form { width: 600px;}
+form input[type=text], form input[type=url] { width: 100%;}
+

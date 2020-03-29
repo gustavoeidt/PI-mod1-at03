@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Listagem de Editais";
+}
+@model List<Edital>
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Órgão</th>
+                <th>Cargo</th>
+                <th>Banca</th>
+                <th>Remuneração</th>
+                <th>Vagas</th>
+                <th>Edital</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (Edital item in Model)
+        {
+            <tr>
+                <td>@item.orgao</td>
+                <td>@item.cargo</td>
+                <td>@item.banca</td>
+                <td>@item.remuneracao</td>
+                <td>@item.vagas</td>
+                <td><a href="@item.link_edital" target="_blank">@item.link_edital</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

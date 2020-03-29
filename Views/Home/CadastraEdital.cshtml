@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Cadastro de Edital";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model at03.Models.Edital
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+    <p>
+        <input type="submit" value="Cadastrar" class="btn btn-primary"/>
+    </p>
+}

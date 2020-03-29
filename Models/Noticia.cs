@@ -11,6 +11,7 @@ namespace at03.Models
 
         [Display(Name = "Texto")]
         [Required]
+        [DataType(DataType.MultilineText)]
         public string texto { get; set; }
 
         [Display(Name = "Autor")]
@@ -19,6 +20,7 @@ namespace at03.Models
 
         [Display(Name = "Data")]
         [Required]
+        [DataType(DataType.Date)]
         public DateTime data { get; set; }
     }
 }

@@ -35,3 +35,5 @@ C:\xampp\htdocs\PI-1\at03\obj\Debug\netcoreapp3.1\at03.csproj.CopyComplete
 C:\xampp\htdocs\PI-1\at03\obj\Debug\netcoreapp3.1\Razor\Views\Home\Editais.cshtml.g.cs
 C:\xampp\htdocs\PI-1\at03\obj\Debug\netcoreapp3.1\Razor\Views\Home\CadastraEdital.cshtml.g.cs
 C:\xampp\htdocs\PI-1\at03\obj\Debug\netcoreapp3.1\Razor\Views\Home\CadastraNoticia.cshtml.g.cs
+C:\xampp\htdocs\PI-1\at03\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contato.cshtml.g.cs
+C:\xampp\htdocs\PI-1\at03\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs

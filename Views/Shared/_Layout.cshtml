@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
     <body class="EerieBlackBG" style="padding: 0; margin: 0;">
-        <header style="background-image: url('img/header.jpg'); padding: 10px 20px;">
+        <header style="background-image: url('/img/header.jpg'); padding: 10px 20px;">
             <h1>Infocon</h1>
         </header>
         
@@ -17,8 +17,20 @@
                 <li>@Html.ActionLink("Home","Index","Home")</li> 
                 <li>@Html.ActionLink("Listagem de Editais","Editais","Home")</li> 
                 <li>@Html.ActionLink("Contato","Contato","Home")</li> 
-                <li>@Html.ActionLink("Cadastra Edital","CadastraEdital","Home")</li> 
-                <li>@Html.ActionLink("Cadastra Notícia","CadastraNoticia","Home")</li> 
+                
+                @{
+                    if(!ViewBag.logado){
+                        <li>@Html.ActionLink("Entrar","Login","Home")</li>
+                    }
+                        else
+                    {
+                        <li>@Html.ActionLink("Cadastra Edital","CadastraEdital","Home")</li> 
+                        <li>@Html.ActionLink("Cadastra Notícia","CadastraNoticia","Home")</li>
+                        <li>@Html.ActionLink("Sair","Logoff","Home")</li>
+                    }
+                }
+                
+                
                 
             </ul>
         </nav>

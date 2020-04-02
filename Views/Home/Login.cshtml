@@ -1,9 +1,9 @@
-﻿@{
-    ViewData["Title"] = "Cadastro de Edital";
+@{
+    ViewData["Title"] = "Entrar no Sistema";
 }
 <h1>@ViewData["Title"]</h1>
 
-@model at03.Models.Edital
+@model at03.Models.Usuario
 
 @using (Html.BeginForm())
 {
@@ -11,6 +11,6 @@
 
     @Html.EditorForModel()
     <p style="margin-top: 20px; text-align: right";>
-        <input type="submit" value="Cadastrar" class="btn btn-primary"/>
+        <input type="submit" value="Entrar" class="btn btn-primary"/>
     </p>
 }

@@ -37,3 +37,4 @@ C:\xampp\htdocs\PI-1\at03\obj\Debug\netcoreapp3.1\Razor\Views\Home\CadastraEdita
 C:\xampp\htdocs\PI-1\at03\obj\Debug\netcoreapp3.1\Razor\Views\Home\CadastraNoticia.cshtml.g.cs
 C:\xampp\htdocs\PI-1\at03\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contato.cshtml.g.cs
 C:\xampp\htdocs\PI-1\at03\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\xampp\htdocs\PI-1\at03\obj\Debug\netcoreapp3.1\Razor\Views\Home\Anuncie.cshtml.g.cs

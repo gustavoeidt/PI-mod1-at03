@@ -41,6 +41,12 @@ namespace at03.Controllers
             return View();
         }
 
+        public IActionResult Anuncie()
+        {
+            ViewBag.logado = Dados.logado;
+            return View();
+        }
+
         public IActionResult CadastraEdital()
         {
             if(!Dados.logado) return RedirectToAction("Index");

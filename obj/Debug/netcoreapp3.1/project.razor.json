@@ -20571,6 +20571,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\xampp\\htdocs\\PI-1\\at03\\Views\\Home\\Anuncie.cshtml",
+      "TargetPath": "Views\\Home\\Anuncie.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\xampp\\htdocs\\PI-1\\at03\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"

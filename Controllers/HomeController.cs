@@ -102,7 +102,8 @@ namespace at03.Controllers
             ViewBag.logado = Dados.logado;
             if(ModelState.IsValid)
             {
-                Usuario admin = Dados.retornarUsuario();
+                UsuarioRepository usrRep = new UsuarioRepository();
+                Usuario admin = usrRep.Lista(1);
                 
                 using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
                 {

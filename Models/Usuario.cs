@@ -7,6 +7,10 @@ namespace at03.Models
 {
     public class Usuario
     {
+        [ScaffoldColumn(false)]
+        [Key]
+        public int id {get;set;}
+        
         [Display(Name = "Nome de Usuário")]
         [Required]
         public string usuario { get; set; }

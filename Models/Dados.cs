@@ -22,7 +22,6 @@ namespace at03.Models
         { 
             editais = new List<Edital>();
             noticias = new List<Noticia>();
-            usuario = new Usuario("admin","admin");
             logado = false;
         }
 

@@ -4,18 +4,14 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<div>
-    <form action="/Home/Contato" method="post">        
-        <div class="editor-label"><label for="usuario">Nome Completo</label></div>
-        <div class="editor-field"><input class="text-box single-line" data-val="true" data-val-required="The Nome de Usu&#xE1;rio field is required." id="usuario" name="usuario" type="text" value="" /> <span class="field-validation-valid" data-valmsg-for="usuario" data-valmsg-replace="true"></span></div>
-        <div class="editor-label"><label for="senha">E-Mail</label></div>
-        <div class="editor-field"><input class="text-box single-line" data-val="true" data-val-required="The Senha field is required." id="senha" name="senha" type="text" value="" /> <span class="field-validation-valid" data-valmsg-for="senha" data-valmsg-replace="true"></span></div>
-        <div class="editor-label"><label for="usuario">Assunto</label></div>
-        <div class="editor-field">
-            <textarea></textarea>
-        </div>
-        <p style="margin-top: 20px; text-align: right";>
-            <input type="submit" value="Entrar" class="btn btn-primary"/>
-        </p>
-    </form>                
-</div>
+@model at03.Models.Edital
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+    <p style="margin-top: 20px; text-align: right";>
+        <input type="submit" value="Cadastrar" class="btn btn-primary"/>
+    </p>
+}

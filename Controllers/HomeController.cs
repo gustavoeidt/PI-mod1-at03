@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using System.Text;
 using System.Security.Cryptography;
 using at03.Models;
+using System.Net.Mail;
 
 namespace at03.Controllers
 {
@@ -24,20 +25,41 @@ namespace at03.Controllers
         public IActionResult Index()
         {
             ViewBag.logado = Dados.logado;
-            List<Noticia> noticias = Dados.listarNoticias();
+            NoticiaRepository noticiaRep = new NoticiaRepository();
+            List<Noticia> noticias = noticiaRep.Lista();
             return View(noticias);
         }
 
         public IActionResult Editais()
         {
             ViewBag.logado = Dados.logado;
-            List<Edital> editais = Dados.listarEditais();
+            EditalRepository editalRep = new EditalRepository();
+            List<Edital> editais = editalRep.Lista();
             return View(editais);
         }
 
         public IActionResult Contato()
         {
             ViewBag.logado = Dados.logado;
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Contato( Contato c)
+        {
+            ViewBag.logado = Dados.logado;
+            if(ModelState.IsValid)
+            {
+                MailMessage mailMessage = new MailMessage();
+                mailMessage.To.Add("infocon@infocon.com.br");
+                mailMessage.From = new MailAddress(c.email);
+                mailMessage.Subject = c.nome;
+                mailMessage.Body = c.assunto;
+                SmtpClient smtpClient = new SmtpClient("smtp.your-isp.com");
+                smtpClient.Send(mailMessage);
+
+                return RedirectToAction("Index");
+            }
             return View();
         }
 
@@ -62,7 +84,8 @@ namespace at03.Controllers
             ViewBag.logado = Dados.logado;
             if(ModelState.IsValid)
             {
-                Dados.incluirEdital(modelo);
+                EditalRepository editalRep = new EditalRepository();
+                editalRep.Cadastra(modelo, Dados.usuario);
                 return RedirectToAction("Editais");
             }
             return View();
@@ -83,7 +106,8 @@ namespace at03.Controllers
             ViewBag.logado = Dados.logado;
             if(ModelState.IsValid)
             {
-                Dados.incluirNoticia(modelo);
+                NoticiaRepository noticiaRep = new NoticiaRepository();
+                noticiaRep.Cadastra(modelo,Dados.usuario);
                 return RedirectToAction("Index");
             }
             return View();
@@ -114,6 +138,7 @@ namespace at03.Controllers
                     if (String.Equals(senha_md5,admin.senha)&&String.Equals(modelo.usuario,admin.usuario))
                     {
                         Dados.Login();
+                        Dados.usuario = admin;
                         return RedirectToAction("Index");
                     } 
                 }

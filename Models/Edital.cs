@@ -5,6 +5,13 @@ namespace at03.Models
 {
     public class Edital
     {
+        [ScaffoldColumn(false)]
+        [Key]
+        public int id {get;set;}
+
+        [ScaffoldColumn(false)]
+        public int usuario_id { get; set;}
+
         [Display(Name = "Nome do Órgão")]
         [Required]
         public string orgao { get; set; }

@@ -3,12 +3,13 @@
 }
 @model List<Noticia>
 
-    <section class="noticias" style="margin: 10px; padding: 10px; border: dotted 2px black; width: 600px; float: left;">
+<div class="row">
+    <section class="col-9">
         @foreach (Noticia item in Model)
         {
             <article>
-                <h2 class="amazon" style="margin: 0;">@item.titulo</h2>
-                <p style="border-bottom: 2px dotted black; padding-bottom: 10px; margin: 0;"><small>@item.data</small></p>
+                <h2 class="amazon">@item.titulo</h2>
+                <p class="pb-1"><small>@item.data</small></p>
                 <p>@item.texto</p>
             </article>
         <hr />
@@ -16,6 +17,8 @@
         
     </section>
 
-    <aside style=" float: left; margin: 10px; padding: 10px;" class="dustStormBG EerieBlack">
-        <a href="/Home/Anuncie"><img src="img/anuncie.jpg" alt="Anuncie Aqui"></a>
+    <aside class="EerieBlack col-3">
+        <a href="/Home/Anuncie"><img class="w-100" src="img/anuncie.jpg" alt="Anuncie Aqui"></a>
     </aside>
+
+    </div>

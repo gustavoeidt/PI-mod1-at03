@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,44 +8,73 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-    <body class="EerieBlackBG" style="padding: 0; margin: 0;">
-        <header style="background-image: url('/img/header.jpg'); padding: 10px 20px;">
-            <h1>Infocon</h1>
-        </header>
-        
-        <nav class="independenceBG">
-            <ul style="margin: 0; padding: 10px 20px; list-style: none;">
-                <li>@Html.ActionLink("Home","Index","Home")</li> 
-                <li>@Html.ActionLink("Listagem de Editais","Editais","Home")</li> 
-                <li>@Html.ActionLink("Contato","Contato","Home")</li> 
-                
-                @{
-                    if(!ViewBag.logado){
-                        <li>@Html.ActionLink("Entrar","Login","Home")</li>
-                    }
-                        else
-                    {
-                        <li>@Html.ActionLink("Cadastra Edital","CadastraEdital","Home")</li> 
-                        <li>@Html.ActionLink("Cadastra Notícia","CadastraNoticia","Home")</li>
-                        <li>@Html.ActionLink("Sair","Logoff","Home")</li>
-                    }
-                }
-                
-                
-                
-            </ul>
-        </nav>
 
-        <div style="margin: 20px;">
-            @RenderBody()
+<body class="EerieBlackBG">
+    <section class="container mt-5">
+        <div class="jumbotron infoconBKG">
+            <h1 class="display-4">Infocon</h1>
+            <p class="lead">Notícias sobre editais e concursos de TI</p>
+            <hr class="my-4">
+            <p>Acesse e não perca a oportunidade de iniciar a sua carreira no setor público! </p>
         </div>
+    </section>
 
-        <footer class="amazonBG" style="padding: 40px 20px; clear: both;">
-            &copy; @DateTime.Now.Year  Infocon | Fone: +55 (47) 9999-9999
+    <section class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark independenceBG">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <li>@Html.ActionLink("Home","Index","Home",null,new{@class = "nav-link"})</li>
+                    </li>
+                    <li class="nav-item">
+                        <li>@Html.ActionLink("Listagem de Editais","Editais","Home",null,new{@class = "nav-link"})</li>
+                    </li>
+                    <li class="nav-item">
+                        <li>@Html.ActionLink("Contato","Contato","Home",null,new{@class = "nav-link"})</li>
+                    </li>
+
+                    @{
+                        if (!ViewBag.logado)
+                        {
+                            <li>@Html.ActionLink("Entrar","Login","Home",null,new{@class = "nav-link"})</li>
+                        }
+                        else
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Cadastros
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @Html.ActionLink("Cadastra Edital","CadastraEdital","Home",null,new{@class =
+                                                    "dropdown-item"})
+                                    @Html.ActionLink("Cadastra Notícia","CadastraNoticia","Home",null,new{@class =
+                                                    "dropdown-item"})
+                                    @Html.ActionLink("Sair","Logoff","Home",null,new{@class = "dropdown-item"})
+                                </div>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <section class="container my-5">
+        @RenderBody()
+    </section>
+
+    <section class="container-fluid amazonBG ">
+        <footer class="py-4">
+            &copy; @DateTime.Now.Year Infocon | Fone: +55 (47) 9999-9999
         </footer>
+    </section>
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
+
 </html>
